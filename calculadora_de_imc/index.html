@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura JS - Course - Calculadora de IMC</title>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <script>
+        function pulaLinha(){
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function mostra(frase){
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function calcularIMC(peso, altura){
+            return Math.round(peso / (altura * altura))
+        }
+
+        var peso = prompt("Digite seu peso: ");
+        var altura = prompt("Digite sua altura: ")
+
+        mostra("Seu IMC é: " + calcularIMC(peso, altura));
+
+        if (calcularIMC(peso, altura) < 18.5) {
+            mostra("e você está abaixo do peso normal.");
+        }
+        else if(calcularIMC(peso, altura) < 24.9){
+            mostra("e você está no peso normal.");
+        }
+        else if(calcularIMC(peso, altura) < 29.9){
+            mostra("você está com excesso de peso.");
+        }
+        else if(calcularIMC(peso, altura) < 34.9){
+            mostra("obesidade classe I");
+        }
+        else if(calcularIMC(peso, altura) < 39.9){
+            mostra("obesidade classe II");
+        }
+        else if(calcularIMC(peso, altura) > 40.0){
+            mostra("obesidade classe III");
+        }
+
+        
+
+    </script>
+</body>
+</html>
