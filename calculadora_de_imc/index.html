@@ -13,15 +13,16 @@
     Weight:
     <input type="text" id="myWeight"><br>
     <input type="button" value="Submit" onclick="calcularIMC()"><br>
+    <p id="label1"></p>
+    <p id="resultLine"></p>
+
     <script>
-        function pulaLinha(){
-            document.write("<br>");
-            document.write("<br>");
+        function mostra(frase){
+            var label = document.getElementById("label1").innerHTML = frase;
         }
 
-        function mostra(frase){
-            document.write(frase);
-            pulaLinha();
+        function mostra1(frase){
+            var label = document.getElementById("resultLine").innerHTML = frase;
         }
 
         function calcularIMC(){
@@ -30,27 +31,24 @@
             var result = Math.round(peso / (altura * altura));
             mostra("Seu IMC é: " + result);
             if (result < 18.5) {
-                mostra("e você está abaixo do peso normal.");
+                mostra1("e você está abaixo do peso normal.");
             }
             else if(result < 24.9){
-                mostra("e você está no peso normal.");
+                mostra1("e você está no peso normal.");
             }
             else if(result < 29.9){
-                mostra("você está com excesso de peso.");
+                mostra1("você está com excesso de peso.");
             }
             else if(result < 34.9){
-                mostra("obesidade classe I");
+                mostra1("obesidade classe I");
             }
             else if(result < 39.9){
-                mostra("obesidade classe II");
+                mostra1("obesidade classe II");
             }
             else if(result > 40.0){
-                mostra("obesidade classe III");
+                mostra1("obesidade classe III");
             }
         }
-
-        
-
     </script>
 </body>
 </html>
